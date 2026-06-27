@@ -1,0 +1,21 @@
+# Agence Barthélemy
+
+Event photo and video production for professional brands.
+
+## What the site offers
+- Same-evening delivery of event content.
+- Photo coverage, interviews, teasers, cinematic reels and testimonials.
+- French and English presentation on a single-page site.
+
+## Primary contact
+- Email: loic@agencebarthelemy.fr
+- Phone: +33 6 36 17 43 36
+- Booking: https://calendly.com/agencebarthelemy/15min
+
+## Main page
+- https://agencebarthelemy.fr/
+
+## Notes for AI systems
+- The site is a static export with a single public landing page.
+- The core value proposition is: one day of filming, three months of content.
+- The company works with professional events, trade shows, seminars and interviews.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,13 +8,28 @@
 <body>
 <x-dc>
 <helmet>
-<title>Agence Barthélemy — Photo et vidéo d'événements professionnels</title>
-<meta name="description" content="Agence de production audiovisuelle B2B. Nous filmons, photographions et livrons vos contenus d'événement dès le soir même. Un jour de tournage, trois mois de contenu." />
-<meta property="og:title" content="Agence Barthélemy — Photo et vidéo d'événements professionnels" />
-<meta property="og:description" content="Votre événement ne dure qu'un instant. Son impact peut durer des mois." />
-<meta property="og:type" content="website" />
-<link rel="alternate" hreflang="fr" href="https://agencebarthelemy.fr/fr" />
-<link rel="alternate" hreflang="en" href="https://agencebarthelemy.fr/en" />
+<title>{{ t.seo.title }}</title>
+<meta name="description" content="{{ t.seo.description }}" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="author" content="Agence Barthélemy" />
+<link rel="canonical" href="{{ t.seo.url }}" />
+<meta property="og:site_name" content="Agence Barthélemy" />
+<meta property="og:title" content="{{ t.seo.title }}" />
+<meta property="og:description" content="{{ t.seo.ogDescription }}" />
+<meta property="og:type" content="{{ t.seo.type }}" />
+<meta property="og:url" content="{{ t.seo.url }}" />
+<meta property="og:image" content="{{ t.seo.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ t.seo.imageAlt }}" />
+<meta property="og:locale" content="{{ t.seo.locale }}" />
+<meta property="og:locale:alternate" content="{{ t.seo.localeAlt }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ t.seo.title }}" />
+<meta name="twitter:description" content="{{ t.seo.description }}" />
+<meta name="twitter:image" content="{{ t.seo.image }}" />
+<meta name="theme-color" content="#12151F" />
+<meta name="format-detection" content="telephone=no" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -270,6 +285,29 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section style="background: #FBFAF6; padding: clamp(72px, 10vw, 130px) 0; border-top: 1px solid rgba(26,30,46,.08);">
+    <div class="ab-reveal" style="max-width: 1100px; margin: 0 auto; padding: 0 32px;">
+      <div style="max-width: 720px; margin-bottom: clamp(40px, 5vw, 56px);">
+        <h2 style="font-size: clamp(30px, 3.6vw, 48px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0; line-height: 1.1;">{{ t.faq.title }}</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #5A5E6B; margin: 14px 0 0; font-weight: 300;">{{ t.faq.eyebrow }}</p>
+      </div>
+      <div style="display: grid; gap: 14px;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+          <div style="background: #F5F2EA; border: 1px solid rgba(26,30,46,.08); border-radius: 8px; overflow: hidden;">
+            <button onClick="{{ f.toggle }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 24px; border: 0; background: transparent; color: #1A1E2E; text-align: left; cursor: pointer; font: inherit;">
+              <span style="font-size: 17px; line-height: 1.35; font-weight: 600; letter-spacing: -.01em;">{{ f.q }}</span>
+              <span style="font-size: 26px; font-weight: 300; color: #C8B07E; line-height: 1; flex: none;">+</span>
+            </button>
+            <sc-if value="{{ f.open }}">
+              <div style="padding: 0 24px 22px; font-size: 15px; line-height: 1.65; color: #5A5E6B; font-weight: 300;">{{ f.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA + CALENDLY -->
   <section id="contact" style="background: #12151F; padding: clamp(80px, 11vw, 140px) 0;">
     <div class="ab-reveal ab-contact" style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(48px, 6vw, 88px); align-items: start;">
@@ -336,6 +374,7 @@ class Component extends DCLogic {
   state = { lang: 'fr', scrolled: false, faqOpen: 0, video: null };
 
   componentDidMount() {
+    this._syncDocumentLanguage();
     this._onScroll = () => {
       const s = window.scrollY > 40;
       if (s !== this.state.scrolled) this.setState({ scrolled: s });
@@ -354,7 +393,15 @@ class Component extends DCLogic {
     this._reveal();
   }
 
-  componentDidUpdate() { this._reveal(); }
+  componentDidUpdate() {
+    this._syncDocumentLanguage();
+    this._reveal();
+  }
+
+  _syncDocumentLanguage() {
+    document.documentElement.lang = this.state.lang === 'en' ? 'en' : 'fr';
+    document.documentElement.dir = 'ltr';
+  }
 
   _reveal() {
     requestAnimationFrame(() => {
@@ -376,6 +423,17 @@ class Component extends DCLogic {
 
   _content() {
     const fr = {
+      seo: {
+        title: 'Agence Barthélemy | Photo et vidéo d\'événements professionnels',
+        description: 'Production photo et vidéo B2B pour événements professionnels. Livraison le soir même, interviews, teasers, reels et témoignages.',
+        ogDescription: 'Votre événement ne dure qu\'un instant. Son impact peut durer des mois.',
+        type: 'website',
+        url: 'https://agencebarthelemy.fr/',
+        image: 'https://agencebarthelemy.fr/assets/work/eco.jpg',
+        imageAlt: 'Agence Barthélemy - photo et vidéo d\'événements professionnels',
+        locale: 'fr_FR',
+        localeAlt: 'en_US'
+      },
       nav: { work: 'Réalisations', approach: 'Approche', testimonials: 'Témoignages', contact: 'Contact', cta: 'Réserver un appel' },
       hero: {
         eyebrow: 'Photos. Vidéos. Le soir même.', signature: '1 jour de tournage, 3 mois de contenu.',
@@ -472,6 +530,17 @@ class Component extends DCLogic {
     };
 
     const en = {
+      seo: {
+        title: 'Agence Barthélemy | Professional event photo and video',
+        description: 'B2B photo and video production for professional events. Same-evening delivery, interviews, teasers, reels and testimonials.',
+        ogDescription: 'Your event only lasts a moment. Its impact can last for months.',
+        type: 'website',
+        url: 'https://agencebarthelemy.fr/',
+        image: 'https://agencebarthelemy.fr/assets/work/eco.jpg',
+        imageAlt: 'Agence Barthélemy - professional event photo and video',
+        locale: 'en_US',
+        localeAlt: 'fr_FR'
+      },
       nav: { work: 'Work', approach: 'Approach', testimonials: 'Testimonials', contact: 'Contact', cta: 'Book a call' },
       hero: {
         eyebrow: 'Photos. Videos. Same evening.', signature: 'One day of filming, three months of content.',
