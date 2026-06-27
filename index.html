@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Agence Barthélemy — Photo et vidéo d'événements professionnels</title>
+<meta name="description" content="Agence de production audiovisuelle B2B. Nous filmons, photographions et livrons vos contenus d'événement dès le soir même. Un jour de tournage, trois mois de contenu." />
+<meta property="og:title" content="Agence Barthélemy — Photo et vidéo d'événements professionnels" />
+<meta property="og:description" content="Votre événement ne dure qu'un instant. Son impact peut durer des mois." />
+<meta property="og:type" content="website" />
+<link rel="alternate" hreflang="fr" href="https://agencebarthelemy.fr/fr" />
+<link rel="alternate" hreflang="en" href="https://agencebarthelemy.fr/en" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  @keyframes ab-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes ab-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  image-slot#loic-portrait { display: block; width: 100%; height: 100%; }
+  @media (max-width: 1024px) {
+    .ab-navlinks { display: none !important; }
+  }
+  @media (max-width: 880px) {
+    .ab-statband { grid-template-columns: 1fr !important; gap: 28px !important; }
+    .ab-statrow { justify-content: flex-start !important; }
+    .ab-contact { grid-template-columns: 1fr !important; }
+    .ab-about { grid-template-columns: 1fr !important; }
+    .ab-aboutphoto { max-width: 200px !important; margin: 0 auto !important; }
+  }
+  @media (max-width: 700px) {
+    .ab-steps { grid-template-columns: 1fr !important; }
+    .ab-steps > div { border-right: 0 !important; border-bottom: 1px solid rgba(26,30,46,.14) !important; padding-right: 0 !important; }
+  }
+  @media (max-width: 760px) {
+    .ab-workgrid { grid-template-columns: 1fr !important; }
+    .ab-sprint { grid-template-columns: 1fr !important; }
+    .ab-testigrid { grid-template-columns: 1fr !important; }
+    .ab-deliv { grid-template-columns: 1fr !important; }
+    .ab-results { grid-template-columns: 1fr !important; gap: 40px !important; }
+    section [style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Agence Barthélemy","description":"Agence de production audiovisuelle spécialisée dans la couverture photo et vidéo d'événements professionnels.","areaServed":"FR","email":"loic@agencebarthelemy.fr","telephone":"+33636174336","address":{"@type":"PostalAddress","addressCountry":"FR"},"url":"https://agencebarthelemy.fr"}
+</script>
+</helmet>
+<div style="font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1A1E2E; background: #F5F2EA; -webkit-font-smoothing: antialiased; overflow-x: hidden;">
+
+  <!-- HEADER -->
+  <header style="{{ headerStyle }}">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="#top" style="display: flex; align-items: center;" aria-label="Agence Barthélemy"><img src="assets/logo-watermark.png" alt="Agence Barthélemy" style="height: 26px; width: auto; display: block;" /></a>
+      <nav style="display: flex; align-items: center; gap: 36px;">
+        <div style="display: flex; gap: 30px;" class="ab-navlinks">
+          <a href="#work" style="{{ navLinkStyle }}">{{ t.nav.work }}</a>
+          <a href="#contact" style="{{ navLinkStyle }}">{{ t.nav.contact }}</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+          <button onClick="{{ setFr }}" style="{{ frBtnStyle }}">FR</button>
+          <span style="opacity: .35;">/</span>
+          <button onClick="{{ setEn }}" style="{{ enBtnStyle }}">EN</button>
+        </div>
+        <a href="https://calendly.com/agencebarthelemy/15min" target="_blank" rel="noopener noreferrer" style="{{ headerCtaStyle }}">{{ t.nav.cta }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position: relative; min-height: 100vh; display: flex; align-items: flex-end; background: #12151F; overflow: hidden;">
+    <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+      <iframe src="https://player.vimeo.com/video/1160556597?background=1&autoplay=1&loop=1&muted=1&autopause=0" allow="autoplay" style="position: absolute; top: 50%; left: 50%; width: 177.78vh; min-width: 100%; height: 56.25vw; min-height: 100%; transform: translate(-50%,-50%); border: 0;"></iframe>
+    </div>
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(18,21,31,.55) 0%, rgba(18,21,31,.25) 45%, rgba(18,21,31,.92) 100%);"></div>
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 32px 92px;">
+      <div style="display: block; width: 100%; background: rgba(18,21,31,.34); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: clamp(28px, 3.4vw, 44px) clamp(28px, 3.4vw, 48px);">
+        <div style="display: inline-flex; align-items: center; gap: 10px; color: #C8B07E; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 24px;">
+          <span style="width: 26px; height: 1px; background: #C8B07E; display: inline-block;"></span>{{ t.hero.eyebrow }}
+        </div>
+        <h1 style="font-size: clamp(40px, 6vw, 86px); line-height: 1.04; font-weight: 600; letter-spacing: -.02em; color: #FBFAF6; margin: 0;">{{ t.hero.titleA }}<br />{{ t.hero.titleB }}</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO BANDS -->
+  <section style="background: #FBFAF6; padding: clamp(56px, 7vw, 84px) 0;">
+    <div class="ab-reveal" style="max-width: 1180px; margin: 0 auto; padding: 0 32px;">
+      <p style="text-align: center; color: #8A8170; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 36px;">{{ t.trusted.title }}</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(36px, 5vw, 64px); margin-bottom: clamp(48px, 6vw, 72px);">{{ clientLogoEls }}</div>
+      <p style="text-align: center; color: #8A8170; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 36px;">{{ t.shoot.title }}</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(30px, 4vw, 52px); margin-bottom: clamp(24px, 3vw, 40px);">{{ venueLogoEls1 }}</div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(30px, 4vw, 52px);">{{ venueLogoEls2 }}</div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section style="background: #F5F2EA; padding: clamp(56px, 7vw, 90px) 0; border-top: 1px solid rgba(26,30,46,.08);">
+    <div class="ab-reveal ab-statband" style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: auto 1fr; gap: clamp(32px, 6vw, 80px); align-items: center;">
+      <p style="font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 500; color: #1A1E2E; margin: 0; max-width: 22ch; letter-spacing: -.01em;">{{ t.stats.leadA }}<br />{{ t.stats.leadB }}</p>
+      <div style="display: flex; gap: 0; flex-wrap: wrap; justify-content: flex-end;" class="ab-statrow">
+        <sc-for list="{{ statItems }}" as="stat" hint-placeholder-count="2">
+          <div style="{{ stat.cellStyle }}">
+            <div style="display: flex; align-items: baseline; gap: 4px; color: #1A1E2E;">
+              <span style="font-size: clamp(52px, 6.5vw, 88px); font-weight: 600; letter-spacing: -.04em; line-height: .9;">{{ stat.num }}</span>
+              <span style="font-size: clamp(26px, 3vw, 40px); font-weight: 500; line-height: 1; color: #C8B07E;">{{ stat.plus }}</span>
+            </div>
+            <div style="margin-top: 16px; font-size: 13px; color: #5A5E6B; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;">{{ stat.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" style="background: #FBFAF6; padding: clamp(72px, 10vw, 130px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;">
+      <div class="ab-reveal" style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 48px;">
+        <div>
+          <h2 style="font-size: clamp(28px, 3.4vw, 44px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0;">{{ t.work.eyebrow }}</h2>
+        </div>
+        <a href="https://vimeo.com/showcase/11773444?fl=so&fe=fs" target="_blank" rel="noopener noreferrer" style="color: #5A5E6B; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(200,176,126,.6); padding-bottom: 4px;" style-hover="color: #1A1E2E;">{{ t.work.viewAll }}<span>&rarr;</span></a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;" class="ab-workgrid">
+        <sc-for list="{{ work.items }}" as="item" hint-placeholder-count="4">
+          <button onClick="{{ item.open }}" class="ab-reveal" style="position: relative; display: block; width: 100%; padding: 0; border: 0; background: #0d1018; border-radius: 3px; overflow: hidden; cursor: pointer; aspect-ratio: 16/10; text-align: left;">
+            <img src="{{ item.poster }}" alt="{{ item.title }}" loading="lazy" style="{{ item.imgStyle }}" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,16,24,.1) 30%, rgba(13,16,24,.85) 100%);"></div>
+            <div style="position: absolute; top: 18px; right: 18px; width: 52px; height: 52px; border-radius: 50%; background: rgba(200,176,126,.92); display: flex; align-items: center; justify-content: center; color: #1A1E2E;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5v13l11-6.5z"/></svg>
+            </div>
+            <div style="position: absolute; left: 16px; right: 16px; bottom: 16px; background: rgba(18,21,31,.34); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 14px 18px;">
+              <div style="display: flex; gap: 10px; align-items: center; color: #C8B07E; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 7px;">
+                <span>{{ item.category }}</span>
+              </div>
+              <div style="color: #FBFAF6; font-size: clamp(18px, 1.9vw, 23px); font-weight: 600; letter-spacing: -.01em;">{{ item.title }}</div>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPRINT -->
+  <section style="background: #F5F2EA; padding: clamp(72px, 10vw, 130px) 0;">
+    <div class="ab-reveal" style="max-width: 1240px; margin: 0 auto; padding: 0 32px;">
+      <div style="max-width: 900px; margin-bottom: clamp(44px, 5vw, 64px);">
+        <h2 style="font-size: clamp(30px, 3.6vw, 48px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0 0 20px; line-height: 1.1;">{{ t.sprint.title }}</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #5A5E6B; margin: 0; font-weight: 300;">{{ t.sprint.body }} <span style="white-space: nowrap;">{{ t.sprint.body2 }}</span></p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(26,30,46,.12); border-radius: 6px; overflow: hidden;" class="ab-sprint">
+        <sc-for list="{{ t.sprint.items }}" as="s" hint-placeholder-count="2">
+          <div style="background: #F5F2EA; padding: clamp(28px, 3vw, 40px);">
+            <div style="font-size: clamp(34px, 4vw, 52px); font-weight: 600; letter-spacing: -.03em; color: #C8B07E; line-height: 1; white-space: nowrap;">{{ s.value }}</div>
+            <h3 style="margin: 18px 0 10px; font-size: 19px; font-weight: 600; color: #1A1E2E; letter-spacing: -.01em;">{{ s.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.55; color: #5A5E6B; margin: 0; font-weight: 300;">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section style="background: #FBFAF6; padding: clamp(72px, 10vw, 130px) 0;">
+    <div class="ab-reveal" style="max-width: 1240px; margin: 0 auto; padding: 0 32px;">
+      <div style="max-width: 720px; margin-bottom: clamp(40px, 5vw, 56px);">
+        <h2 style="font-size: clamp(30px, 3.6vw, 48px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0; line-height: 1.1;">{{ t.deliverables.title }}</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px;" class="ab-deliv">
+        <sc-for list="{{ t.deliverables.items }}" as="d" hint-placeholder-count="6">
+          <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+              <svg width="24" height="24" viewBox="0 0 20 20" fill="none" style="flex: none;"><path d="M4 10.5l4 4 8-9" stroke="#C8B07E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3 style="font-size: clamp(21px, 2vw, 25px); font-weight: 600; color: #1A1E2E; margin: 0; letter-spacing: -.015em;">{{ d.title }}</h3>
+            </div>
+            <p style="font-size: 16px; line-height: 1.6; color: #5A5E6B; margin: 0; font-weight: 300;">{{ d.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section style="background: #F5F2EA; padding: clamp(72px, 10vw, 130px) 0; border-top: 1px solid rgba(26,30,46,.1);">
+    <div class="ab-reveal" style="max-width: 1100px; margin: 0 auto; padding: 0 32px;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto clamp(48px, 6vw, 68px);">
+        <h2 style="font-size: clamp(30px, 3.6vw, 48px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0;">{{ t.results.title }}</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="ab-results">
+        <sc-for list="{{ t.results.items }}" as="r" hint-placeholder-count="3">
+          <div style="text-align: center;">
+            <div style="width: clamp(150px, 16vw, 190px); height: clamp(150px, 16vw, 190px); margin: 0 auto 20px; border: 1px solid rgba(200,176,126,.6); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: clamp(40px, 4.8vw, 60px); font-weight: 600; letter-spacing: -.03em; color: #1A1E2E; line-height: 1;">{{ r.value }}</span>
+            </div>
+            <div style="font-size: 16px; color: #5A5E6B; font-weight: 400;">{{ r.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="background: #FBFAF6; padding: clamp(72px, 10vw, 130px) 0;">
+    <div class="ab-reveal" style="max-width: 1100px; margin: 0 auto; padding: 0 32px;">
+      <h2 style="font-size: clamp(30px, 3.6vw, 48px); font-weight: 600; letter-spacing: -.02em; color: #1A1E2E; margin: 0 0 48px;">{{ t.testimonials.title }}</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="ab-testigrid">
+        <sc-for list="{{ testimonials }}" as="ts" hint-placeholder-count="4">
+          <div style="background: #F5F2EA; border: 1px solid rgba(26,30,46,.09); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+            <button onClick="{{ ts.open }}" style="{{ ts.thumbStyle }}">
+              {{ ts.thumbImg }}
+              <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,21,31,.15) 30%, rgba(18,21,31,.55) 100%);"></div>
+              <sc-if value="{{ ts.videoId }}" hint-placeholder-val="{{ true }}">
+                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 58px; height: 58px; border-radius: 50%; background: rgba(200,176,126,.94); display: flex; align-items: center; justify-content: center; color: #1A1E2E; box-shadow: 0 8px 24px rgba(0,0,0,.3);">
+                  <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5v13l11-6.5z"/></svg>
+                </span>
+              </sc-if>
+              <div style="position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: rgba(18,21,31,.34); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); border: 1px solid rgba(255,255,255,.08); border-radius: 5px; padding: 11px 15px;">
+                <div style="min-width: 0; text-align: left;">
+                  <div style="font-weight: 600; font-size: 14.5px; color: #FBFAF6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ts.name }}</div>
+                  <div style="font-size: 12.5px; color: rgba(251,250,246,.66); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ts.role }}</div>
+                </div>
+                <sc-if value="{{ ts.videoId }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #C8B07E; white-space: nowrap; flex: none;">{{ ts.watch }}</span>
+                </sc-if>
+                <sc-if value="{{ ts.noQuote }}">
+                  <span style="font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(251,250,246,.6); white-space: nowrap; flex: none;">{{ ts.soonTag }}</span>
+                </sc-if>
+              </div>
+            </button>
+            <div style="padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; flex: 1;">
+              <svg width="28" height="22" viewBox="0 0 30 24" fill="#C8B07E" style="opacity:.45; margin-bottom: 16px; flex: none;"><path d="M0 24V13.2C0 5.9 4.6 1 12 0l1.2 3.6C9.4 4.9 7.2 7.3 7 10.8h5V24H0zm17 0V13.2C17 5.9 21.6 1 29 0l1.2 3.6c-3.8 1.3-6 3.7-6.2 7.2H29V24H17z"/></svg>
+              <sc-if value="{{ ts.quote }}" hint-placeholder-val="x">
+                <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; font-weight: 400; color: #2A2E3C; margin: 0;">{{ ts.quote }}</p>
+              </sc-if>
+              <sc-if value="{{ ts.noQuote }}">
+                <p style="font-size: 15px; line-height: 1.5; color: #8A8170; margin: 0; font-style: italic;">{{ ts.soonText }}</p>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PORTRAIT -->
+  <section style="background: #F5F2EA; padding: clamp(64px, 9vw, 120px) 0 clamp(72px, 10vw, 130px);">
+    <div class="ab-reveal" style="max-width: 1040px; margin: 0 auto; padding: clamp(40px, 5vw, 64px); background: #1A1E2E; border-radius: 4px;">
+      <div class="ab-about" style="display: grid; grid-template-columns: 210px 1fr; gap: clamp(36px, 5vw, 60px); align-items: center;">
+        <div class="ab-aboutphoto" style="width: 100%; aspect-ratio: 4/5; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 44px rgba(0,0,0,.42); border: 1px solid rgba(255,255,255,.1);">
+          <img src="assets/people/loic-portrait.webp" alt="Loïc Barthélemy, Agence Barthélemy" style="display:block;width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div>
+          <p style="color: #C8B07E; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 22px;">{{ t.about.eyebrow }}</p>
+          <p style="font-size: clamp(21px, 2.3vw, 29px); line-height: 1.32; font-weight: 500; color: #FBFAF6; margin: 0 0 26px; letter-spacing: -.015em; text-wrap: balance;">{{ t.about.quoteA }}<br />{{ t.about.quoteB }}</p>
+          <p style="font-size: 16px; line-height: 1.7; color: rgba(251,250,246,.66); margin: 0 0 26px; font-weight: 300;">{{ t.about.bio }}</p>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div>
+              <div style="font-weight: 600; font-size: 16px; color: #FBFAF6;">{{ t.about.name }}</div>
+              <div style="font-size: 14px; color: rgba(251,250,246,.5);">{{ t.about.role }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + CALENDLY -->
+  <section id="contact" style="background: #12151F; padding: clamp(80px, 11vw, 140px) 0;">
+    <div class="ab-reveal ab-contact" style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(48px, 6vw, 88px); align-items: start;">
+      <div>
+        <h2 style="font-size: clamp(34px, 4.4vw, 58px); line-height: 1.05; font-weight: 600; letter-spacing: -.02em; color: #FBFAF6; margin: 0 0 36px; white-space: nowrap;">{{ t.finalCta.title }}<span style="color: #C8B07E;">.</span></h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255,255,255,.1); padding-top: 30px;">
+          <a href="mailto:loic@agencebarthelemy.fr" style="color: #FBFAF6; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 12px;" style-hover="color: #C8B07E;"><span style="color: rgba(251,250,246,.4); font-size: 13px; width: 88px; display: inline-block;">{{ t.contact.emailLabel }}</span>loic@agencebarthelemy.fr</a>
+          <a href="tel:+33636174336" style="color: #FBFAF6; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 12px;" style-hover="color: #C8B07E;"><span style="color: rgba(251,250,246,.4); font-size: 13px; width: 88px; display: inline-block;">{{ t.contact.phoneLabel }}</span>+33 6 36 17 43 36</a>
+        </div>
+      </div>
+      <div style="background: #1A1E2E; border-radius: 10px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.42); border: 1px solid rgba(255,255,255,.08);">
+        <div style="display: flex; align-items: center; gap: 11px; padding: 17px 24px; background: #12151F; border-bottom: 1px solid rgba(255,255,255,.08);">
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #5BBF8A; box-shadow: 0 0 0 4px rgba(91,191,138,.18); flex: none;"></span>
+          <span style="color: #FBFAF6; font-size: 14px; font-weight: 600; letter-spacing: .01em;">{{ t.contact.bookingTitle }}</span>
+          <span style="margin-left: auto; color: rgba(251,250,246,.45); font-size: 12.5px;">{{ t.contact.bookingNote }}</span>
+        </div>
+        <iframe src="https://calendly.com/agencebarthelemy/15min?hide_gdpr_banner=1&hide_event_type_details=1&background_color=1a1e2e&text_color=fbfaf6&primary_color=c8b07e" title="Réserver un échange" loading="lazy" style="width: 100%; height: 470px; border: 0; display: block; background: #1A1E2E;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #0d1018; padding: 56px 0 40px; border-top: 1px solid rgba(255,255,255,.06);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: flex-start; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.08);">
+        <div style="max-width: 34ch;">
+          <div style="margin-bottom: 14px;"><img src="assets/logo-watermark.png" alt="Agence Barthélemy" style="height: 24px; width: auto; display: block;" /></div>
+          <p style="font-size: 14px; line-height: 1.6; color: rgba(251,250,246,.5); margin: 0;">{{ t.footer.baselineA }}<br /><span style="white-space: nowrap;">{{ t.footer.slogan }}</span></p>
+        </div>
+        <div style="display: flex; gap: 26px; flex-wrap: wrap;">
+          <a href="https://www.linkedin.com/in/lo%C3%AFc-barth%C3%A9lemy-5a5961204/" target="_blank" rel="noopener noreferrer" style="{{ footerLinkStyle }}">LinkedIn</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center; padding-top: 24px;">
+        <div style="display: flex; gap: 22px; flex-wrap: wrap;">
+          <span style="color: rgba(251,250,246,.4); font-size: 13px;">{{ t.footer.rights }}</span>
+          <sc-for list="{{ t.footer.legal }}" as="l" hint-placeholder-count="3">
+            <a href="#" style="color: rgba(251,250,246,.45); font-size: 13px; text-decoration: none;" style-hover="color: #C8B07E;">{{ l }}</a>
+          </sc-for>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+          <button onClick="{{ setFr }}" style="{{ frFootStyle }}">FR</button>
+          <span style="color: rgba(251,250,246,.3);">/</span>
+          <button onClick="{{ setEn }}" style="{{ enFootStyle }}">EN</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lightboxOpen }}">
+    <div onClick="{{ closeVideo }}" style="position: fixed; inset: 0; z-index: 100; background: rgba(8,10,16,.94); display: flex; align-items: center; justify-content: center; padding: 24px; animation: ab-fade .3s ease both;">
+      <button onClick="{{ closeVideo }}" aria-label="Fermer" style="position: absolute; top: 24px; right: 28px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; font-size: 22px; cursor: pointer;">&times;</button>
+      <div style="width: 100%; max-width: 1080px; aspect-ratio: 16/9;" onClick="{{ stop }}">
+        <iframe src="{{ lightboxSrc }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="true" style="width: 100%; height: 100%; border: 0; border-radius: 4px;"></iframe>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { lang: 'fr', scrolled: false, faqOpen: 0, video: null };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    this._reveal();
+  }
+
+  componentDidUpdate() { this._reveal(); }
+
+  _reveal() {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.ab-reveal').forEach((el) => {
+        if (el.dataset.abInit) return;
+        el.dataset.abInit = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+        this._io.observe(el);
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+
+  _content() {
+    const fr = {
+      nav: { work: 'Réalisations', approach: 'Approche', testimonials: 'Témoignages', contact: 'Contact', cta: 'Réserver un appel' },
+      hero: {
+        eyebrow: 'Photos. Vidéos. Le soir même.', signature: '1 jour de tournage, 3 mois de contenu.',
+        titleA: '1 jour de tournage,', titleB: '3 mois de contenu.',
+        subtitle: 'Nous captons votre événement et vous livrons le soir même des contenus prêts à publier. Vos concurrents attendent trois semaines, vous publiez dès le jour J.',
+        ctaPrimary: 'Réserver un échange', ctaSecondary: 'Voir nos réalisations'
+      },
+      trusted: { title: 'Ils nous font confiance' },
+      shoot: { title: 'Les événements que nous couvrons' },
+      stats: {
+        leadA: 'une expertise', leadB: 'parfaitement exécutée.',
+        items: [
+          { num: '150', plus: '+', label: 'Événements couverts' },
+          { num: '1500', plus: '+', label: 'Livrables produits' }
+        ]
+      },
+      results: {
+        title: 'Des résultats mesurables.',
+        items: [
+          { value: '×3', label: 'sur vos rendez-vous qualifiés' },
+          { value: '+350', label: 'contenus créés en un tournage' },
+          { value: '+100K', label: 'impressions sur vos réseaux' }
+        ]
+      },
+      work: {
+        eyebrow: 'Nos réalisations.', title: '', viewAll: 'Voir tout',
+        items: [
+          { key: 'simi', title: 'éCo.Urbain, couverture complète', category: 'Salon', show: '12143884', poster: 'assets/work/eco.jpg' },
+          { key: 'olac', title: 'OLAC Festival, aftermovie', category: 'Événement', vid: '1093779825', poster: '1093779825', zoom: 1.38 },
+          { key: 'sem', title: 'Standard Ecom, en immersion', category: 'Séminaire', show: '11773444', poster: 'assets/work/standard.jpg' },
+          { key: 'interview', title: 'Ville de Colombes, interview partenaire', category: 'Interview', vid: '1159310111', poster: 'assets/work/colombes.jpg' }
+        ]
+      },
+      testimonials: {
+        eyebrow: 'Témoignages', title: 'Ce qu\u2019en disent nos clients', watch: 'Voir le témoignage', pendingLabel: 'Témoignage à venir', soonTag: 'Vidéo à venir',
+        items: [
+          { company: 'Standard Ecom', name: 'Tom Boeglin', role: 'Président, Standard Ecom', photo: 'assets/people/tom.png', quote: 'Impact immédiat. On a touché plus de monde qu\u2019avec notre communication habituelle. C\u2019est devenu indispensable.', initials: 'TB', videoUrl: 'https://player.vimeo.com/video/1204318622?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'Pin Ads', name: 'Luc Bermond', role: 'Président, Pin Ads', photo: 'assets/people/luc.png', quote: 'Avoir quelqu\u2019un derrière la caméra qui te guide et te met à l\u2019aise, ça change tout dans le rendu final.', initials: 'LB', videoUrl: 'https://player.vimeo.com/video/1204315598?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'éCo.Urbain', name: 'Anne Thébaud', role: 'Directrice du développement, éCo.Urbain', photo: 'assets/people/anne.png', quote: 'Ils ont sacralisé nos événements, capitalisé chaque conférence. Notre marque continue de vivre des mois après.', initials: 'AT', videoUrl: 'https://player.vimeo.com/video/1204316349?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'DeltaQuad', name: 'Karen Aarts', role: 'DeltaQuad', photo: 'assets/people/karen.png', quote: 'Recevoir le contenu le jour même a tout changé\u202F: on a pu tout publier directement et attirer beaucoup plus de monde sur notre stand.', initials: 'KA', videoUrl: 'https://player.vimeo.com/video/1204316346?autoplay=1&title=0&byline=0&portrait=0' }
+        ]
+      },
+      approach: {
+        eyebrow: 'Comment on travaille', title: 'Une méthode en trois temps.',
+        steps: [
+          { n: '01', title: 'En quelques minutes, on prépare tout.', body: 'On identifie ensemble les moments clés de votre événement. Un brief simple, et nous nous occupons du reste.' },
+          { n: '02', title: 'Le jour J, on tourne.', body: 'Notre équipe se déplace sur votre événement. Interviews, ambiance, temps forts, photos. Vous n\u2019avez rien à gérer.' },
+          { n: '03', title: 'Le soir même, on livre.', body: 'Un premier montage, un teaser et vos premières photos, prêts à publier avant la fin de l\u2019événement. L\u2019ensemble des livrables suit dans les jours qui suivent.' }
+        ]
+      },
+      sprint: {
+        title: 'Notre Stratégie Sprint.',
+        body: 'Une production éclair, pensée pour l\u2019événementiel.',
+        body2: 'On tourne, on monte et on livre au rythme de votre événement, sans jamais vous ralentir.',
+        items: [
+          { value: 'Le soir même', title: 'Contenu déjà disponible.', desc: 'Avant la fin de l\u2019événement, on vous remet directement une clé USB avec un premier montage, un teaser et une sélection de photos déjà retouchées.' },
+          { value: 'J+14', title: 'Livraison complète', desc: 'L\u2019intégralité de vos contenus, montés et retouchés dans tous les formats, prêts à diffuser.' }
+        ]
+      },
+      deliverables: {
+        eyebrow: 'Ce que vous récupérez', title: 'Tout ce qu\u2019il faut pour exister.',
+        note: 'Chaque livrable est décliné en plusieurs formats (16:9, 9:16, 1:1), prêt à diffuser sur tous vos canaux.',
+        items: [
+          { title: 'Interviews montées', desc: 'Vos prises de parole et celles de vos partenaires, exploitées pour vos réseaux.' },
+          { title: 'Teasers', desc: 'Des formats courts pensés pour toucher plus que votre audience.' },
+          { title: 'Reels cinématiques', desc: 'Le rythme d\u2019une vraie production, au format vertical pour booster vos statistiques.' },
+          { title: 'Témoignages', desc: 'Visiteurs et partenaires qui parlent de vous, de vos savoir-faire et de vos compétences.' },
+          { title: 'Vidéo immersion', desc: 'Un film qui replonge dans l\u2019ambiance et l\u2019énergie du moment.' },
+          { title: 'Reportage photo', desc: 'Une sélection large de photos retouchées, dont une partie livrée dès le soir même.' }
+        ]
+      },
+      faq: {
+        eyebrow: 'Questions fréquentes', title: 'Tout ce que vous voulez savoir.',
+        items: [
+          { q: 'Comment se déroule un tournage sur notre événement ?', a: 'Notre équipe se déplace et s\u2019installe en autonomie. Nous captons les interviews, l\u2019ambiance, les temps forts et les photos sans perturber votre activité ni mobiliser vos équipes.' },
+          { q: 'Que livrez-vous le soir même ?', a: 'Un premier montage, un teaser et une sélection de photos retouchées, prêts à publier avant même la fin de l\u2019événement.' },
+          { q: 'Qui détient les droits sur les contenus ?', a: 'Vous. Les contenus produits vous appartiennent et vous êtes libres de les diffuser sur tous vos canaux, sans limite de durée.' },
+          { q: 'Intervenez-vous partout en France et à l\u2019international ?', a: 'Oui. Nous nous déplaçons sur l\u2019ensemble du territoire et à l\u2019international, là où se tiennent vos événements.' },
+          { q: 'Travaillez-vous en anglais ?', a: 'Oui. Nos contenus et nos interviews peuvent être produits et livrés en français comme en anglais.' }
+        ]
+      },
+      about: {
+        eyebrow: 'Derrière l\u2019agence',
+        quoteA: 'Vous organisez votre événement,', quoteB: 'nous organisons votre image.',
+        bio: 'Notre rôle est simple\u202F: vous décharger complètement et vous livrer, très vite, des contenus qui performent. Que ce soit sur les réseaux avec des centaines de milliers d\u2019impressions, ou sur le terrain avec un boost de vos rendez-vous commerciaux. Vous restez focus sur votre événement, et on met tout en œuvre pour qu\u2019il soit vu par tous.',
+        name: 'Loïc Barthélemy', role: 'Fondateur, Agence Barthélemy'
+      },
+      finalCta: {
+        title: 'Prenez rendez-vous',
+        ctaPrimary: 'Réserver un échange'
+      },
+      contact: { emailLabel: 'Email', phoneLabel: 'Téléphone', zoneLabel: 'Zone', zone: 'France, déplacements possibles', bookingTitle: 'Réservez votre créneau', bookingNote: '15 min, en visio' },
+      footer: { baselineA: 'Photo et vidéo d\u2019événements professionnels.', slogan: 'Un jour de tournage, trois mois de contenu.', rights: '© 2026 Agence Barthélemy', legal: ['Mentions légales', 'Confidentialité', 'CGV'] }
+    };
+
+    const en = {
+      nav: { work: 'Work', approach: 'Approach', testimonials: 'Testimonials', contact: 'Contact', cta: 'Book a call' },
+      hero: {
+        eyebrow: 'Photos. Videos. Same evening.', signature: 'One day of filming, three months of content.',
+        titleA: 'One day of filming,', titleB: 'three months of content.',
+        subtitle: 'We capture your event and deliver ready-to-publish content the same evening. Your competitors wait three weeks, you publish on day one.',
+        ctaPrimary: 'Book a call', ctaSecondary: 'See our work'
+      },
+      trusted: { title: 'Trusted by' },
+      shoot: { title: 'Events we cover' },
+      stats: {
+        leadA: 'expertise,', leadB: 'flawlessly executed.',
+        items: [
+          { num: '150', plus: '+', label: 'Events covered' },
+          { num: '1500', plus: '+', label: 'Deliverables produced' }
+        ]
+      },
+      results: {
+        title: 'Measurable results.',
+        items: [
+          { value: '×3', label: 'on your qualified meetings' },
+          { value: '+350', label: 'pieces created in one shoot' },
+          { value: '+100K', label: 'impressions on your channels' }
+        ]
+      },
+      work: {
+        eyebrow: 'Our work.', title: '', viewAll: 'View all',
+        items: [
+          { key: 'simi', title: 'éCo.Urbain, full coverage', category: 'Trade show', show: '12143884', poster: 'assets/work/eco.jpg' },
+          { key: 'olac', title: 'OLAC Festival, aftermovie', category: 'Event', vid: '1093779825', poster: '1093779825', zoom: 1.38 },
+          { key: 'sem', title: 'Standard Ecom, behind the scenes', category: 'Seminar', show: '11773444', poster: 'assets/work/standard.jpg' },
+          { key: 'interview', title: 'Ville de Colombes, partner interview', category: 'Interview', vid: '1159310111', poster: 'assets/work/colombes.jpg' }
+        ]
+      },
+      testimonials: {
+        eyebrow: 'Testimonials', title: 'What our clients say', watch: 'Watch testimonial', pendingLabel: 'Testimonial coming soon', soonTag: 'Video soon',
+        items: [
+          { company: 'Standard Ecom', name: 'Tom Boeglin', role: 'President, Standard Ecom', photo: 'assets/people/tom.png', quote: 'Immediate impact. We reached far more people than with our usual communications. It has become essential.', initials: 'TB', videoUrl: 'https://player.vimeo.com/video/1204318624?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'Pin Ads', name: 'Luc Bermond', role: 'President, Pin Ads', photo: 'assets/people/luc.png', quote: 'Having someone behind the camera who guides you and puts you at ease changes everything in the final result.', initials: 'LB', videoUrl: 'https://player.vimeo.com/video/1204315599?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'éCo.Urbain', name: 'Anne Thébaud', role: 'Head of development, éCo.Urbain', photo: 'assets/people/anne.png', quote: 'They elevated our events and capitalised on every conference. Our brand keeps living months later.', initials: 'AT', videoUrl: 'https://player.vimeo.com/video/1204316348?autoplay=1&title=0&byline=0&portrait=0' },
+          { company: 'DeltaQuad', name: 'Karen Aarts', role: 'DeltaQuad', photo: 'assets/people/karen.png', quote: 'Getting the content the same day changed everything: we could publish it all directly and bring far more people to our booth.', initials: 'KA', videoUrl: 'https://player.vimeo.com/video/1204316347?autoplay=1&title=0&byline=0&portrait=0' }
+        ]
+      },
+      approach: {
+        eyebrow: 'How we work', title: 'A method in three steps.',
+        steps: [
+          { n: '01', title: 'In minutes, we plan it all.', body: 'Together we pinpoint the key moments of your event. A simple brief, and we handle the rest.' },
+          { n: '02', title: 'On the day, we shoot.', body: 'Our team travels to your event. Interviews, atmosphere, highlights, photos. You have nothing to manage.' },
+          { n: '03', title: 'The same evening, we deliver.', body: 'A first edit, a teaser and your first photos, ready to publish before the event ends. The full set of deliverables follows in the days after.' }
+        ]
+      },
+      sprint: {
+        title: 'Our Sprint Strategy.',
+        body: 'Lightning-fast production built for events.',
+        body2: 'We film, edit and deliver at the pace of your event, without ever slowing you down.',
+        items: [
+          { value: 'Same evening', title: 'Content already in hand.', desc: 'Before the event ends, we hand you a USB drive directly, with a first edit, a teaser and a selection of already retouched photos.' },
+          { value: 'D+14', title: 'Full delivery', desc: 'All your content, edited and retouched in every format, ready to broadcast.' }
+        ]
+      },
+      deliverables: {
+        eyebrow: 'What you get', title: 'Everything you need to exist.',
+        note: 'Each deliverable comes in several formats (16:9, 9:16, 1:1), ready to publish across all your channels.',
+        items: [
+          { title: 'Edited interviews', desc: 'Your talks and your partners\u2019, put to work for your channels.' },
+          { title: 'Teasers', desc: 'Short formats built to reach beyond your own audience.' },
+          { title: 'Cinematic reels', desc: 'The pace of a real production, vertical, to boost your numbers.' },
+          { title: 'Testimonials', desc: 'Visitors and partners speaking about you, your expertise and your skills.' },
+          { title: 'Immersion video', desc: 'A film that brings back the atmosphere and energy of the moment.' },
+          { title: 'Photo coverage', desc: 'A broad selection of retouched photos, part of it delivered the same evening.' }
+        ]
+      },
+      faq: {
+        eyebrow: 'Frequently asked', title: 'Everything you want to know.',
+        items: [
+          { q: 'How does filming at our event work?', a: 'Our team travels and sets up independently. We capture interviews, atmosphere, highlights and photos without disrupting your activity or tying up your teams.' },
+          { q: 'What do you deliver the same evening?', a: 'A first edit, a teaser and a selection of retouched photos, ready to publish before the event even ends.' },
+          { q: 'Who owns the rights to the content?', a: 'You do. The content we produce belongs to you, and you are free to use it across all your channels, with no time limit.' },
+          { q: 'Do you work across France and internationally?', a: 'Yes. We travel across the country and internationally, wherever your events take place.' },
+          { q: 'Do you work in English?', a: 'Yes. Our content and interviews can be produced and delivered in both French and English.' }
+        ]
+      },
+      about: {
+        eyebrow: 'Behind the agency',
+        quoteA: 'You run your event.', quoteB: 'We run your image.',
+        bio: 'Our role is simple: take everything off your hands and deliver, very fast, content that performs. Whether on social with hundreds of thousands of impressions, or in the field with a boost to your sales meetings. You stay focused on your craft, and we make sure it gets seen by everyone.',
+        name: 'Loïc Barthélemy', role: 'Founder, Agence Barthélemy'
+      },
+      finalCta: {
+        title: 'Book a meeting',
+        ctaPrimary: 'Book a call'
+      },
+      contact: { emailLabel: 'Email', phoneLabel: 'Phone', zoneLabel: 'Area', zone: 'France, travel available', bookingTitle: 'Book your slot', bookingNote: '15 min, online' },
+      footer: { baselineA: 'Photo and video for professional events.', slogan: 'One day of filming, three months of content.', rights: '© 2026 Agence Barthélemy', legal: ['Legal notice', 'Privacy', 'Terms'] }
+    };
+
+    return this.state.lang === 'fr' ? fr : en;
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this._content();
+    const sc = this.state.scrolled;
+
+    const clients = [
+      { name: 'Standard Ecom', file: 'standard-ecom' },
+      { name: 'Pin Ads', file: 'pin-ads' },
+      { name: 'Mercedes', file: 'mercedes' },
+      { name: 'Intermarché', file: 'intermarche' },
+      { name: 'Nice-Matin', file: 'nice-matin' },
+      { name: 'DeltaQuad', file: 'deltaquad' }
+    ].map((l) => ({ ...l, alt: 'Logo ' + l.name }));
+    const venues = [
+      { name: 'All4Customer', file: 'a4c' },
+      { name: 'SantExpo', file: 'santexpo' },
+      { name: 'CES', file: 'ces' },
+      { name: 'Paris-Nord Villepinte', file: 'villepinte' },
+      { name: 'Eurexpo Lyon', file: 'eurexpo' },
+      { name: 'SIMI', file: 'simi' },
+      { name: 'Palais des Festivals de Cannes', file: 'palais-cannes', big: true },
+      { name: 'Eurosatory', file: 'eurosatory' },
+      { name: 'Tech for Retail', file: 't4r' },
+      { name: 'VivaTech', file: 'vivatech' },
+      { name: 'Paris Expo Porte de Versailles', file: 'porte-versailles' }
+    ].map((l) => ({ ...l, alt: 'Logo ' + l.name }));
+
+    const clientLogoEls = clients.map((l, i) =>
+      React.createElement('img', { key: 'c' + i, src: 'assets/logos/dark/' + l.file + '.png', alt: l.alt, style: { height: '32px', width: 'auto', maxWidth: '150px', objectFit: 'contain', opacity: 0.78, flex: 'none' } })
+    );
+    const mkVenue = (l, i) => React.createElement('img', { key: 'v' + i, src: 'assets/logos/dark/' + l.file + '.png', alt: l.alt, style: { height: (l.big ? 50 : 30) + 'px', width: 'auto', maxWidth: (l.big ? 116 : 120) + 'px', objectFit: 'contain', opacity: 0.62, flex: 'none' } });
+    const venueOrder1 = ['a4c', 'santexpo', 'ces', 'simi', 'eurosatory', 't4r', 'vivatech'];
+    const venueOrder2 = ['villepinte', 'eurexpo', 'palais-cannes', 'porte-versailles'];
+    const byFile = (f) => venues.find((v) => v.file === f);
+    const venueLogoEls1 = venueOrder1.map(byFile).filter(Boolean).map(mkVenue);
+    const venueLogoEls2 = venueOrder2.map(byFile).filter(Boolean).map(mkVenue);
+
+    const faqs = t.faq.items.map((it, i) => {
+      const open = this.state.faqOpen === i;
+      return {
+        q: it.q, a: it.a, open,
+        toggle: () => this.setState({ faqOpen: open ? -1 : i }),
+        iconStyle: 'font-size:24px;font-weight:300;color:#C8B07E;flex:none;transition:transform .3s;transform:rotate(' + (open ? '45deg' : '0deg') + ');'
+      };
+    });
+
+    const work = { ...t.work, items: t.work.items.map((it) => ({
+      ...it,
+      poster: it.poster.indexOf('assets/') === 0 ? it.poster : 'https://vumbnail.com/' + it.poster + '.jpg',
+      imgStyle: 'position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .62; transition: opacity .5s, transform .8s;' + (it.zoom ? ' transform: scale(' + it.zoom + ');' : ''),
+      open: () => this.setState({ video: it.show
+        ? 'https://vimeo.com/showcase/' + it.show + '/embed2?autoplay=1'
+        : 'https://player.vimeo.com/video/' + it.vid + '?autoplay=1&title=0&byline=0&portrait=0' })
+    })) };
+
+    const statItems = t.stats.items.map((s, i) => ({
+      num: s.num, plus: s.plus, label: s.label,
+      cellStyle: 'padding:0 clamp(24px,4vw,56px);' + (i > 0 ? 'border-left:1px solid rgba(255,255,255,.14);' : 'padding-left:0;')
+    }));
+
+    const steps = t.approach.steps.map((s, i) => ({
+      ...s,
+      cellStyle: 'padding:36px ' + (i === t.approach.steps.length - 1 ? '0' : '44px') + ' 44px 0;' + (i === t.approach.steps.length - 1 ? '' : 'border-right:1px solid rgba(26,30,46,.14);')
+    }));
+
+    const testimonials = t.testimonials.items.map((it) => {
+      const hasVideo = !!it.videoUrl;
+      const wide = it.photo ? it.photo.replace('assets/people/', 'assets/people/wide/').replace('.png', '.jpg') : null;
+      return {
+        company: it.company,
+        name: it.name || it.company,
+        role: it.role || t.testimonials.pendingLabel,
+        quote: it.quote || '',
+        noQuote: !it.quote,
+        soonText: t.testimonials.pendingLabel,
+        soonTag: t.testimonials.soonTag,
+        initials: it.initials || it.company.replace(/[^A-Za-zÀ-ÿ]/g, '').slice(0, 2).toUpperCase(),
+        thumbImg: wide
+          ? React.createElement('img', { src: wide, alt: it.name || it.company, loading: 'lazy', style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' } })
+          : null,
+        videoId: hasVideo ? '1' : null,
+        watch: t.testimonials.watch,
+        thumbStyle: 'position:relative;display:block;width:100%;border:0;padding:0;margin:0;aspect-ratio:16/9;background:#12151F;overflow:hidden;cursor:' + (hasVideo ? 'pointer' : 'default') + ';',
+        open: hasVideo ? () => this.setState({ video: it.videoUrl }) : null
+      };
+    });
+
+    return {
+      t, lang,
+      headerStyle: 'position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s, border-color .4s, box-shadow .4s;background:' + (sc ? 'rgba(18,21,31,.92)' : 'transparent') + ';backdrop-filter:' + (sc ? 'blur(14px)' : 'none') + ';-webkit-backdrop-filter:' + (sc ? 'blur(14px)' : 'none') + ';border-bottom:1px solid ' + (sc ? 'rgba(255,255,255,.08)' : 'transparent') + ';',
+      navLinkStyle: 'color:rgba(251,250,246,.78);font-size:14px;font-weight:400;text-decoration:none;',
+      headerCtaStyle: 'background:#C8B07E;color:#1A1E2E;font-weight:600;font-size:14px;padding:10px 20px;border-radius:2px;text-decoration:none;white-space:nowrap;',
+      frBtnStyle: 'background:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;color:' + (lang === 'fr' ? '#C8B07E' : 'rgba(251,250,246,.55)') + ';',
+      enBtnStyle: 'background:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;color:' + (lang === 'en' ? '#C8B07E' : 'rgba(251,250,246,.55)') + ';',
+      frFootStyle: 'background:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;color:' + (lang === 'fr' ? '#C8B07E' : 'rgba(251,250,246,.5)') + ';',
+      enFootStyle: 'background:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;color:' + (lang === 'en' ? '#C8B07E' : 'rgba(251,250,246,.5)') + ';',
+      footerLinkStyle: 'color:rgba(251,250,246,.6);font-size:14px;text-decoration:none;',
+      setFr: () => this.setState({ lang: 'fr' }),
+      setEn: () => this.setState({ lang: 'en' }),
+      clients, venues, clientLogoEls, venueLogoEls1, venueLogoEls2,
+      faqs, work, steps, testimonials, statItems,
+      lightboxOpen: !!this.state.video,
+      lightboxSrc: this.state.video || '',
+      closeVideo: () => this.setState({ video: null }),
+      stop: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
