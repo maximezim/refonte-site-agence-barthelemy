@@ -1,22 +1,24 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const rootDir = __dirname;
-const port = Number(process.env.PORT || 3000);
+const port = Number(process.env.PORT) || 3000;
 
 const contentTypes = {
-  '.html': 'text/html; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
+  '.gif': 'image/gif',
+  '.htm': 'text/html; charset=utf-8',
+  '.html': 'text/html; charset=utf-8',
+  '.ico': 'image/x-icon',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
+  '.js': 'application/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.txt': 'text/plain; charset=utf-8'
+  '.txt': 'text/plain; charset=utf-8',
+  '.webp': 'image/webp'
 };
 
 function send(res, statusCode, body, contentType, cacheControl) {
@@ -51,7 +53,7 @@ http.createServer((req, res) => {
 
     fs.readFile(filePath, (readErr, data) => {
       if (readErr) {
-        if (path.extname(filePath) === '' && !filePath.endsWith(path.sep + 'index.html')) {
+        if (path.extname(filePath) === '' && !filePath.endsWith(`${path.sep}index.html`)) {
           const fallbackPath = path.join(rootDir, 'index.html');
           fs.readFile(fallbackPath, (fallbackErr, fallbackData) => {
             if (fallbackErr) {
