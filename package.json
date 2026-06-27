@@ -1,0 +1,10 @@
+{
+  "name": "refonte-site-agence-barthelemy",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static export for the Agence Barthélemy website.",
+  "scripts": {
+    "build": "node -e \"process.exit(0)\"",
+    "start": "node server.js"
+  }
+}
